@@ -3024,3 +3024,142 @@ border-radius:50px;
         display: none;
     }
 }
+/* =========================================
+   FINAL MOBILE NAVBAR FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        width: 94% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 12px 18px !important;
+        top: 12px !important;
+
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+
+        position: fixed;
+        z-index: 9999;
+    }
+
+    /* Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 48px !important;
+        height: 48px !important;
+        object-fit: contain;
+    }
+
+    .logo h2 {
+        font-size: 16px !important;
+        white-space: nowrap;
+    }
+
+    .logo span {
+        display: none !important;
+    }
+
+    /* Hide normal desktop navigation */
+    .navbar nav {
+        display: none !important;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+
+        width: 45px;
+        height: 45px;
+
+        margin-left: auto;
+
+        border: none;
+        border-radius: 12px;
+
+        background: rgba(255,255,255,0.12);
+        color: white;
+
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Mobile dropdown */
+    #navbarMenu {
+        display: none !important;
+
+        position: fixed !important;
+        top: 85px !important;
+        left: 3% !important;
+
+        width: 94% !important;
+        height: auto !important;
+
+        padding: 12px 0 !important;
+
+        background: #0d5c46 !important;
+
+        border-radius: 18px !important;
+
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
+        z-index: 9998 !important;
+    }
+
+    /* Show dropdown */
+    #navbarMenu.active {
+        display: block !important;
+    }
+
+    #navbarMenu ul {
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        gap: 0 !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #navbarMenu ul li {
+        width: 100% !important;
+        text-align: center;
+        list-style: none;
+    }
+
+    #navbarMenu ul li a {
+        display: block !important;
+
+        padding: 14px 20px !important;
+
+        font-size: 16px !important;
+
+        color: white !important;
+        text-decoration: none;
+    }
+
+    #navbarMenu ul li a:hover {
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* Hide Call button */
+    .call-btn {
+        display: none !important;
+    }
+
+}
