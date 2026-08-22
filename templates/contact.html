@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | SHREE GANGA MEDICAL</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-prescription-bottle-medical"></i>
+SHREE GANGA MEDICAL
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/about">About</a></li>
+
+<li><a href="/services">Services</a></li>
+
+<li>
+    <a href="https://www.google.com/maps/place/Shree.+Ganga+Medical+%26+Gen.+Store/@17.2820948,76.2132371,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc616d340000001:0xf16a7abf961ca969!8m2!3d17.2820948!4d76.215812!16s%2Fg%2F11f15gn3tz?entry=ttu"
+       target="_blank">
+       Location
+    </a>
+</li>
+
+
+
+<li><a href="/gallery">Gallery</a></li>
+
+<li><a href="/healthtips">Health Tips</a></li>
+
+<li><a href="/contact" class="active">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- Banner -->
+
+<section class="page-banner">
+
+<h1>Contact Us</h1>
+
+<p>We're here to help you with your healthcare needs.</p>
+
+</section>
+
+<!-- Contact Section -->
+
+<section class="contact-container">
+
+<div class="contact-info">
+
+<h2>Store Information</h2>
+
+<p><i class="fa-solid fa-user"></i> <strong>Owner:</strong> M. G. Luppatti</p>
+
+<p><i class="fa-solid fa-phone"></i>
+<strong>Phone:</strong>
+<a href="tel:+919900895618">+91 9900895618</a>
+</p>
+
+<p><i class="fa-brands fa-whatsapp"></i>
+<strong>WhatsApp:</strong>
+<a href="https://wa.me/919900895618" target="_blank">
+Chat on WhatsApp
+</a>
+</p>
+
+<p>
+    <i class="fa-solid fa-envelope"></i>
+    <strong>Email:</strong>
+    <a href="mailto:luppattiritesh2@gmail.com">
+        luppattiritesh2@gmail.com
+    </a>
+</p>
+
+<p><i class="fa-solid fa-location-dot"></i>
+<strong>Address:</strong><br>
+Shree Ganga Medical And General Store,<br>
+karajagi tq afzalapur dist kalaburgi, Karnataka, India.
+</p>
+
+<p><i class="fa-solid fa-clock"></i>
+<strong>Opening Hours:</strong><br>
+Monday - Sunday<br>
+8:00 AM - 10:00 PM
+</p>
+
+</div>
+
+<div class="contact-form">
+
+<h2>Send Us a Message</h2>
+
+<form action="https://formsubmit.co/luppattiritesh2@gmail.com" method="POST">
+
+    <!-- Hidden Settings -->
+
+    <input
+    type="hidden"
+    name="_subject"
+    value="New Contact Message - SHREE GANGA MEDICAL">
+
+    <input
+    type="hidden"
+    name="_captcha"
+    value="false">
+
+    <input
+    type="hidden"
+    name="_template"
+    value="table">
+
+    <!-- Redirect after submitting -->
+
+    <input
+    type="hidden"
+    name="_next"
+    value="http://127.0.0.1:5000/contact">
+
+    <!-- Name -->
+
+    <input
+    type="text"
+    name="Name"
+    placeholder="Your Name"
+    required>
+
+    <!-- Email -->
+
+    <input
+    type="email"
+    name="Email"
+    placeholder="Your Email"
+    required>
+
+    <!-- Phone -->
+
+    <input
+    type="tel"
+    name="Phone"
+    placeholder="Phone Number">
+
+    <!-- Message -->
+
+    <textarea
+    name="Message"
+    rows="6"
+    placeholder="Your Message"
+    required></textarea>
+
+    <button type="submit" class="btn">
+
+        <i class="fa-solid fa-paper-plane"></i>
+
+        Send Message
+
+    </button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- Google Map -->
+
+<!-- ================= GOOGLE MAP ================= -->
+
+<!-- ================= GOOGLE MAP ================= -->
+
+<section class="map">
+
+    <h2>Find Us on Google Maps</h2>
+
+    <p class="gallery-subtitle">
+        Visit SHREE GANGA MEDICAL AND GENERAL STORE anytime during our business hours.
+    </p>
+
+    <div class="map-container">
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.692721708658!2d76.21323707493218!3d17.28209478358727!2m3!1f0!2f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc616d340000001%3A0xf16a7abf961ca969!2sShree.%20Ganga%20Medical%20%26%20Gen.%20Store!5e0!3m2!1sen!2sin!4v1785695956159!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+    </div>
+
+</section>
+<div style="margin-top:30px; text-align:center;">
+
+<a href="https://www.google.com/maps/place/Shree.+Ganga+Medical+%26+Gen.+Store/@17.2820948,76.2132371,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc616d340000001:0xf16a7abf961ca969!8m2!3d17.2820948!4d76.215812!16s%2Fg%2F11f15gn3tz"
+target="_blank"
+class="btn">
+
+<i class="fa-solid fa-location-arrow"></i>
+
+Get Directions
+
+</a>
+
+</div>
+<!-- Footer -->
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>SHREE GANGA MEDICAL</h3>
+
+<p>
+
+Your trusted medical store for genuine medicines,
+healthcare products, and veterinary medicines.
+
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<a href="/">Home</a>
+
+<a href="/about">About</a>
+
+<a href="/services">Services</a>
+
+<a href="/medicines">Medicine Availability</a>
+
+<a href="/gallery">Gallery</a>
+
+<a href="/contact">Contact</a>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Our Services</h3>
+
+<p>✔ Prescription Medicines</p>
+
+<p>✔ General Medicines</p>
+
+<p>✔ Veterinary Medicines</p>
+
+<p>✔ Healthcare Products</p>
+
+<p>✔ Baby Care Products</p>
+
+<p>✔ First Aid Essentials</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact</h3>
+
+<p>
+
+<i class="fa-solid fa-phone"></i>
+
++91 9900895618
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+info@shreegangamedical.com
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Shree Ganga Medical And General Store,
+karajagi tq afzalapur dist kalaburgi, Karnataka, India.
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-clock"></i>
+
+Mon–Sun : 8 AM – 10 PM
+
+</p>
+
+<div class="social-icons">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="copyright">
+
+© 2026 SHREE GANGA MEDICAL AND GENERAL STORE
+
+</div>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
