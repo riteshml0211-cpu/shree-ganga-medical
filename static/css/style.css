@@ -3740,3 +3740,85 @@ border-radius:50px;
     }
 
 }
+/* =========================================
+   MOBILE CONTACT SECTION FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .contact-container {
+        width: 100% !important;
+        padding: 0 18px !important;
+        box-sizing: border-box !important;
+    }
+
+    .contact-info {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 28px 22px !important;
+    }
+
+    .contact-info h2 {
+        font-size: 34px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 30px !important;
+    }
+
+    .contact-info p {
+        display: flex !important;
+        align-items: flex-start !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box !important;
+
+        margin: 0 0 28px 0 !important;
+
+        font-size: 17px !important;
+        line-height: 1.55 !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    .contact-info p > i {
+        flex: 0 0 42px !important;
+
+        width: 42px !important;
+
+        margin-top: 4px !important;
+
+        font-size: 24px !important;
+    }
+
+    .contact-info p > strong {
+        flex: 0 0 105px !important;
+
+        width: 105px !important;
+
+        margin-right: 8px !important;
+
+        font-size: 17px !important;
+    }
+
+    /* Email must never overflow */
+    .contact-info p a {
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* Address */
+    .contact-info p br {
+        display: none !important;
+    }
+
+    /* Opening hours */
+    .contact-info p:last-child {
+        margin-bottom: 0 !important;
+    }
+
+}
