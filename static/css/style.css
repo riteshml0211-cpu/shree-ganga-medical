@@ -3822,3 +3822,31 @@ border-radius:50px;
     }
 
 }
+/* =========================================
+   MOBILE STICKY NAVBAR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: fixed !important;
+
+        top: 10px !important;
+        left: 10px !important;
+
+        width: calc(100% - 20px) !important;
+
+        z-index: 9999 !important;
+
+        background: rgba(13, 92, 70, 0.95) !important;
+
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Page content navbar ke neeche se start ho */
+    body {
+        padding-top: 0 !important;
+    }
+
+}
