@@ -2100,3 +2100,30 @@ td {
         background: #1f5b4d !important;
     }
 }
+
+/* FIX TRANSPARENT NAVBAR LOGO */
+
+.navbar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar .logo,
+.navbar .logo span {
+    color: white !important;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.navbar .logo-img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
