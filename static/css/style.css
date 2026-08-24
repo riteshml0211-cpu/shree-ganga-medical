@@ -2166,3 +2166,21 @@ td {
         -1px -1px 2px rgba(255, 255, 255, 1),
         0 0 8px rgba(255, 255, 255, 0.9);
 }
+
+/* ===== EXTRA WHITE SHADOW FOR ALL NAVBAR LINKS ===== */
+
+.navbar ul li a:not(.active) {
+    color: #164f42 !important;
+    text-shadow:
+        2px 2px 5px rgba(255, 255, 255, 1),
+        -2px -2px 5px rgba(255, 255, 255, 1),
+        0 0 12px rgba(255, 255, 255, 1),
+        0 0 20px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Active link like Home */
+.navbar ul li a.active {
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
