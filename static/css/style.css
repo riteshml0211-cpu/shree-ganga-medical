@@ -3529,3 +3529,36 @@ border-radius:50px;
     }
 
 }
+/* =========================================
+   FOOTER TEXT VISIBILITY FIX
+========================================= */
+
+.footer {
+    color: #ffffff !important;
+}
+
+.footer-box h3 {
+    color: #7CFF9B !important;
+}
+
+.footer-box p {
+    color: #ffffff !important;
+    opacity: 0.9;
+}
+
+.footer-box a {
+    color: #ffffff !important;
+    opacity: 0.95;
+}
+
+.footer-box a:hover {
+    color: #7CFF9B !important;
+}
+
+.footer-box i {
+    color: #7CFF9B !important;
+}
+
+.footer .copyright {
+    color: #ffffff !important;
+}
