@@ -4083,3 +4083,16 @@ border-radius:50px;
     }
 
 }
+@media (max-width: 768px) {
+
+    .navbar {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+    }
+
+}
