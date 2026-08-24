@@ -3895,3 +3895,28 @@ border-radius:50px;
     }
 
 }
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        background: #0d5c46;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .hero {
+        margin-top: 0;
+    }
+}
