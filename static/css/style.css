@@ -296,7 +296,7 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: auto;
 }
 
 
@@ -386,7 +386,7 @@ body {
 
     position: relative;
 
-    overflow: hidden;
+    overflow: auto;
 
     background:
         linear-gradient(
@@ -987,7 +987,7 @@ body {
 }
 
 .gallery-card {
-    overflow: hidden;
+    overflow: auto;
 
     background: white;
 
@@ -1152,7 +1152,7 @@ body {
 }
 
 .map-container {
-    overflow: hidden;
+    overflow: auto;
 
     border-radius: 18px;
 
