@@ -1820,3 +1820,194 @@ td {
 }
 
 
+/* =========================================
+   FINAL RESPONSIVE FIXED NAVBAR
+========================================= */
+
+/* ---------- DESKTOP / LAPTOP ---------- */
+
+.navbar {
+    position: fixed !important;
+    top: 15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 92% !important;
+    max-width: 1400px !important;
+    min-height: 72px !important;
+
+    margin: 0 !important;
+    padding: 10px 22px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+
+    background: rgba(255, 255, 255, 0.95) !important;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(13, 92, 70, 0.12) !important;
+    border-radius: 20px !important;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10) !important;
+
+    box-sizing: border-box !important;
+    z-index: 99999 !important;
+}
+
+
+/* Desktop menu */
+
+.navbar ul {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+}
+
+
+.navbar ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.navbar ul li a {
+    display: block !important;
+
+    padding: 12px 16px !important;
+
+    color: #174c40 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+    white-space: nowrap !important;
+
+    border-radius: 14px !important;
+
+    transition: 0.3s ease !important;
+}
+
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background: #0d5c46 !important;
+    color: white !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        top: 8px !important;
+
+        width: calc(100% - 16px) !important;
+        min-height: auto !important;
+
+        padding: 14px 10px !important;
+
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+
+        border-radius: 18px !important;
+    }
+
+
+    /* Logo */
+
+    .navbar .logo {
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+
+        margin: 0 !important;
+
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        color: #174c40 !important;
+    }
+
+
+    .navbar .logo-img {
+        width: 48px !important;
+        height: 48px !important;
+        object-fit: contain !important;
+    }
+
+
+    /* Menu - 4 columns */
+
+    .navbar ul {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(4, 1fr) !important;
+
+        gap: 5px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        list-style: none !important;
+    }
+
+
+    .navbar ul li {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+
+    .navbar ul li a {
+        width: 100% !important;
+        min-height: 42px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 5px 2px !important;
+
+        font-size: 12px !important;
+        font-weight: 600 !important;
+
+        white-space: nowrap !important;
+
+        border-radius: 10px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Health Tips ko thoda chhota */
+    .navbar ul li:nth-child(6) a {
+        font-size: 11px !important;
+    }
+
+
+    /* Page content navbar ke niche se start hoga */
+
+    .hero {
+        padding-top: 240px !important;
+    }
+
+    .page-banner {
+        padding-top: 240px !important;
+    }
+}
