@@ -276,9 +276,34 @@ if(window.scrollY>80){
 
 navbar.style.background="rgba(13,92,70,.95)";
 
-navbar.style.top="0";
+window.addEventListener("scroll", function () {
 
-navbar.style.width="100%";
+    const navbar = document.querySelector(".navbar");
+
+    if (!navbar) return;
+
+    // Desktop scroll effect only
+    if (window.innerWidth > 768) {
+
+        if (window.scrollY > 80) {
+
+            navbar.style.background = "rgba(13,92,70,.95)";
+            navbar.style.top = "0";
+            navbar.style.width = "100%";
+            navbar.style.borderRadius = "0";
+
+        } else {
+
+            navbar.style.background = "rgba(255,255,255,.12)";
+            navbar.style.top = "20px";
+            navbar.style.width = "92%";
+            navbar.style.borderRadius = "20px";
+
+        }
+
+    }
+
+});
 
 navbar.style.borderRadius="0";
 
