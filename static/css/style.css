@@ -3562,3 +3562,33 @@ border-radius:50px;
 .footer .copyright {
     color: #ffffff !important;
 }
+/* =========================================
+   MOBILE NAVBAR - TRANSPARENT GREEN
+   NO BLUR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        background: rgba(13, 92, 70, 0.78) !important;
+
+        /* REMOVE BLUR */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .navbar .logo,
+    .navbar .logo h2,
+    .navbar nav ul li a {
+        color: white !important;
+    }
+
+    .navbar nav ul li a.active {
+        color: #6dff91 !important;
+    }
+
+}
