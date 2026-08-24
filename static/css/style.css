@@ -4417,3 +4417,92 @@ border-radius:50px;
     }
 
 }
+/* =========================================
+   MOBILE NAVBAR - COMPACT VERSION
+   Desktop remains unchanged
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
+        padding: 18px 15px 22px !important;
+
+        border-radius: 0 0 35px 35px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* Logo */
+    .navbar .logo {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 0 18px !important;
+        gap: 7px !important;
+    }
+
+    .navbar .logo-img {
+        width: 55px !important;
+        height: 55px !important;
+        object-fit: contain !important;
+    }
+
+    .navbar .logo span {
+        font-size: 19px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+    }
+
+    /* Navigation links */
+    .navbar ul {
+        width: 100% !important;
+        max-width: 430px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 5px 8px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        list-style: none !important;
+        text-align: center !important;
+    }
+
+    .navbar ul li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar ul li a {
+        display: inline-block !important;
+
+        padding: 8px 10px !important;
+
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+
+        white-space: nowrap !important;
+
+        border-radius: 9px !important;
+    }
+
+    /* Active page */
+    .navbar ul li a.active {
+        padding: 8px 14px !important;
+    }
+
+}
