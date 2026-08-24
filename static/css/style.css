@@ -3850,3 +3850,34 @@ border-radius:50px;
     }
 
 }
+.since-year {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 22px;
+    color: #8cffaa;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.since-year i {
+    font-size: 22px;
+}
+
+.since-year strong {
+    color: #ffffff;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+
+    .since-year {
+        justify-content: center;
+        font-size: 16px;
+        margin: 16px 0 20px;
+    }
+
+    .since-year strong {
+        font-size: 18px;
+    }
+
+}
