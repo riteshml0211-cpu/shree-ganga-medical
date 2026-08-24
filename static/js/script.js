@@ -295,46 +295,7 @@ navbar.style.borderRadius="20px";
 }
 
 });
-// ================= MOBILE MENU =================
 
-const menuToggle = document.getElementById("menuToggle");
-const navbarMenu = document.getElementById("navbarMenu");
-
-if (menuToggle && navbarMenu) {
-
-    menuToggle.addEventListener("click", () => {
-
-        navbarMenu.classList.toggle("active");
-
-        // Change hamburger icon
-        const icon = menuToggle.querySelector("i");
-
-        if (navbarMenu.classList.contains("active")) {
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-        } else {
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-        }
-
-    });
-
-    // Close menu after clicking a link
-    navbarMenu.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            navbarMenu.classList.remove("active");
-
-            const icon = menuToggle.querySelector("i");
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        });
-
-    });
-
-}
 
 // ========================================
 // ACTIVE NAVIGATION ON SCROLL
