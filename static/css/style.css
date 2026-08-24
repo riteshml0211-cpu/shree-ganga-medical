@@ -1811,3 +1811,10 @@ td {
     }
 
 }
+/* NAVBAR SCROLL FIX */
+
+.navbar {
+    position: sticky !important;
+    top: 10px !important;
+    z-index: 99999 !important;
+}
