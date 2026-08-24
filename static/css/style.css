@@ -2199,3 +2199,27 @@ td {
         0 4px 12px rgba(0, 0, 0, 0.18),
         0 0 12px rgba(255, 255, 255, 0.25) !important;
 }
+
+/* ===== SMOOTH NAVBAR HOVER PILL ===== */
+
+.navbar ul li a {
+    border-radius: 50px !important;
+    transition: 
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease !important;
+}
+
+.navbar ul li a:hover {
+    background: rgba(31, 91, 77, 0.75) !important;
+    color: #ffffff !important;
+
+    border-radius: 50px !important;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        0 0 10px rgba(255, 255, 255, 0.25) !important;
+
+    transform: translateY(-2px);
+}
