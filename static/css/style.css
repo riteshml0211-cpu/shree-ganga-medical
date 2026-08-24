@@ -2046,3 +2046,57 @@ td {
     background: rgba(255, 255, 255, 0.15) !important;
     color: white !important;
 }
+
+/* ================================
+   FIX NAVBAR TEXT VISIBILITY
+================================ */
+
+.navbar {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* All navbar links */
+.navbar ul li a {
+    color: #244f46 !important;
+    font-weight: 600;
+    text-shadow: none !important;
+}
+
+/* Hover effect */
+.navbar ul li a:hover {
+    color: #0d5c46 !important;
+}
+
+/* Active page */
+.navbar ul li a.active {
+    background: #1f5b4d !important;
+    color: #ffffff !important;
+    border-radius: 16px;
+}
+
+/* Logo text */
+.navbar .logo,
+.navbar .logo span {
+    color: #244f46 !important;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+
+    .navbar {
+        background: transparent !important;
+    }
+
+    .navbar ul li a {
+        color: #244f46 !important;
+    }
+
+    .navbar ul li a.active {
+        color: #ffffff !important;
+        background: #1f5b4d !important;
+    }
+}
