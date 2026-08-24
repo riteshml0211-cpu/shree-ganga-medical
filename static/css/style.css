@@ -1203,3 +1203,28 @@ a {
     }
 
 }
+/* =========================================
+   FORCE MOBILE NAVBAR TO SCROLL WITH PAGE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+
+    .navbar {
+        position: static !important;
+        top: unset !important;
+        bottom: unset !important;
+        left: unset !important;
+        right: unset !important;
+
+        transform: none !important;
+
+        z-index: auto !important;
+    }
+
+}
