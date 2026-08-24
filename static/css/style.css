@@ -4506,3 +4506,21 @@ border-radius:50px;
     }
 
 }
+/* =========================================
+   MOBILE NAVBAR SCROLL WITH PAGE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+}

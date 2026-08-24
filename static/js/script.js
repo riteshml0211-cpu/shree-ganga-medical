@@ -1,34 +1,34 @@
+// ========================================
+// SHREE GANGA MEDICAL - MAIN JAVASCRIPT
+// ========================================
+
+
 // ================================
-// Medicine Search
+// MEDICINE SEARCH
 // ================================
 
 function searchMedicine() {
 
     const input = document.getElementById("medicineSearch");
-
-    if (!input) return;
-
-    const filter = input.value.toUpperCase();
     const table = document.getElementById("medicineTable");
 
-    if (!table) return;
+    if (!input || !table) return;
 
-    const tr = table.getElementsByTagName("tr");
+    const filter = input.value.toUpperCase();
+    const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < tr.length; i++) {
+    for (let i = 1; i < rows.length; i++) {
 
-        const td = tr[i].getElementsByTagName("td")[0];
+        const firstCell = rows[i].getElementsByTagName("td")[0];
 
-        if (td) {
+        if (!firstCell) continue;
 
-            const txtValue = td.textContent || td.innerText;
+        const text = firstCell.textContent || firstCell.innerText;
 
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
-
+        if (text.toUpperCase().includes(filter)) {
+            rows[i].style.display = "";
+        } else {
+            rows[i].style.display = "none";
         }
 
     }
@@ -37,7 +37,7 @@ function searchMedicine() {
 
 
 // ================================
-// Smooth Scrolling
+// SMOOTH SCROLLING
 // ================================
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -46,8 +46,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const targetId = this.getAttribute("href");
 
-        // Ignore empty #
-        if (targetId === "#") return;
+        if (!targetId || targetId === "#") return;
 
         const target = document.querySelector(targetId);
 
@@ -56,7 +55,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             e.preventDefault();
 
             target.scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "start"
             });
 
         }
@@ -67,56 +67,68 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // ================================
-// Fade Animation
+// FADE ANIMATION
 // ================================
 
-const observer = new IntersectionObserver((entries) => {
+const animatedElements = document.querySelectorAll(
+    ".card, .service-card, .gallery-card, .category-card, .why-card"
+);
 
-    entries.forEach(entry => {
+if (animatedElements.length > 0) {
 
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
+    const observer = new IntersectionObserver((entries) => {
 
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.1
     });
 
-}, {
-    threshold: 0.1
-});
 
-
-document
-    .querySelectorAll(".card, .service-card, .gallery-card")
-    .forEach(el => {
-        observer.observe(el);
+    animatedElements.forEach(element => {
+        observer.observe(element);
     });
+
+}
 
 
 // ================================
-// Scroll To Top Button
+// SCROLL TO TOP BUTTON
 // ================================
 
 const topButton = document.createElement("button");
 
-topButton.innerHTML = "⬆";
 topButton.id = "topBtn";
+topButton.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+topButton.setAttribute("aria-label", "Scroll to top");
 
 document.body.appendChild(topButton);
 
 
-window.addEventListener("scroll", function () {
+function handleTopButton() {
 
-    if (document.documentElement.scrollTop > 300) {
-
-        topButton.style.display = "block";
-
+    if (window.scrollY > 300) {
+        topButton.style.display = "flex";
     } else {
-
         topButton.style.display = "none";
-
     }
 
-});
+}
+
+
+window.addEventListener("scroll", handleTopButton);
+
+window.addEventListener("load", handleTopButton);
 
 
 topButton.addEventListener("click", function () {
@@ -130,7 +142,7 @@ topButton.addEventListener("click", function () {
 
 
 // ================================
-// Highlight Active Navigation Link
+// ACTIVE PAGE NAVIGATION
 // ================================
 
 const currentPage = window.location.pathname;
@@ -139,15 +151,19 @@ document.querySelectorAll(".navbar a").forEach(link => {
 
     const href = link.getAttribute("href");
 
+    if (!href) return;
+
     if (href === currentPage) {
+
         link.classList.add("active");
+
     }
 
 });
 
 
 // ================================
-// Slider
+// SLIDER
 // ================================
 
 const slides = document.querySelectorAll(".slide");
@@ -168,7 +184,7 @@ function showSlide(index) {
 }
 
 
-if (slides.length > 0) {
+if (slides.length > 1) {
 
     showSlide(currentSlide);
 
@@ -188,28 +204,36 @@ if (slides.length > 0) {
 
 
 // ================================
-// Counter Animation
+// COUNTER ANIMATION
 // ================================
 
 const counters = document.querySelectorAll(".counter");
 
-const speed = 100;
+
+function animateCounter(counter) {
+
+    const target = Number(counter.getAttribute("data-target"));
+
+    if (isNaN(target)) return;
+
+    const duration = 1500;
+    const startTime = performance.now();
 
 
-counters.forEach(counter => {
+    function updateCounter(currentTime) {
 
-    const updateCount = () => {
+        const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+        );
 
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
+        const value = Math.floor(progress * target);
 
-        const increment = target / speed;
+        counter.innerText = value;
 
-        if (count < target) {
+        if (progress < 1) {
 
-            counter.innerText = Math.ceil(count + increment);
-
-            setTimeout(updateCount, 20);
+            requestAnimationFrame(updateCounter);
 
         } else {
 
@@ -217,9 +241,16 @@ counters.forEach(counter => {
 
         }
 
-    };
+    }
 
-    updateCount();
+    requestAnimationFrame(updateCounter);
+
+}
+
+
+counters.forEach(counter => {
+
+    animateCounter(counter);
 
 });
 
@@ -233,22 +264,29 @@ const faqs = document.querySelectorAll(".faq-question");
 
 faqs.forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function () {
 
-        const answer = button.nextElementSibling;
-        const icon = button.querySelector("span");
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector("span");
 
         if (!answer) return;
 
-        if (answer.style.display === "block") {
+        const isOpen = answer.style.display === "block";
 
-            answer.style.display = "none";
 
-            if (icon) {
-                icon.innerHTML = "+";
-            }
+        // Close all FAQ answers
+        document.querySelectorAll(".faq-answer").forEach(item => {
+            item.style.display = "none";
+        });
 
-        } else {
+
+        document.querySelectorAll(".faq-question span").forEach(item => {
+            item.innerHTML = "+";
+        });
+
+
+        // Open selected FAQ
+        if (!isOpen) {
 
             answer.style.display = "block";
 
@@ -264,34 +302,7 @@ faqs.forEach(button => {
 
 
 // ================================
-// Card Hover Animation
-// ================================
-
-const cards = document.querySelectorAll(
-    ".card, .service-card, .featured-card, .category-card, .brand-card, .stat-box"
-);
-
-
-cards.forEach(card => {
-
-    card.addEventListener("mouseenter", () => {
-
-        card.style.transform = "translateY(-12px)";
-
-    });
-
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "translateY(0px)";
-
-    });
-
-});
-
-
-// ================================
-// Gallery Lightbox
+// GALLERY LIGHTBOX
 // ================================
 
 function openImage(src) {
@@ -302,6 +313,7 @@ function openImage(src) {
     if (!lightbox || !lightboxImg) return;
 
     lightbox.style.display = "flex";
+
     lightboxImg.src = src;
 
 }
@@ -311,62 +323,47 @@ function closeImage() {
 
     const lightbox = document.getElementById("lightbox");
 
-    if (lightbox) {
-        lightbox.style.display = "none";
+    if (!lightbox) return;
+
+    lightbox.style.display = "none";
+
+}
+
+
+// ================================
+// CLOSE LIGHTBOX ON OUTSIDE CLICK
+// ================================
+
+document.addEventListener("click", function (e) {
+
+    const lightbox = document.getElementById("lightbox");
+
+    if (!lightbox) return;
+
+    if (e.target === lightbox) {
+
+        closeImage();
+
     }
 
-}
+});
 
 
-// ========================================
-// ACTIVE NAVIGATION ON SCROLL
-// ========================================
+// ================================
+// ESC KEY CLOSE LIGHTBOX
+// ================================
 
-const sections = document.querySelectorAll("section[id]");
+document.addEventListener("keydown", function (e) {
 
-const navLinks = document.querySelectorAll(
-    '.navbar a[href^="#"]'
-);
+    if (e.key === "Escape") {
 
+        closeImage();
 
-function updateActiveNav() {
+    }
 
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 180;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-
-            currentSection = section.getAttribute("id");
-
-        }
-
-    });
+});
 
 
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const href = link.getAttribute("href");
-
-        if (href === "#" + currentSection) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-
-window.addEventListener("scroll", updateActiveNav);
-
-window.addEventListener("load", updateActiveNav);
+// ================================
+// END
+// ================================
