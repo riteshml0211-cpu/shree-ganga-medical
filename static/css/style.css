@@ -4418,109 +4418,164 @@ border-radius:50px;
 
 }
 /* =========================================
-   MOBILE NAVBAR - COMPACT VERSION
-   Desktop remains unchanged
-========================================= */
+   MOBILE NAVBAR - FINAL FIX
+   ========================================= */
 
 @media (max-width: 768px) {
 
+    html,
+    body {
+        width: 100%;
+        height: auto !important;
+        min-height: 100%;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    /* NAVBAR */
     .navbar {
         position: relative !important;
+
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+
         width: 100% !important;
+        max-width: 100% !important;
+
         height: auto !important;
         min-height: 0 !important;
 
         margin: 0 !important;
-        padding: 18px 15px 22px !important;
+
+        padding: 25px 18px 22px !important;
+
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
 
         border-radius: 0 0 35px 35px !important;
 
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+        transform: none !important;
 
-        box-sizing: border-box !important;
+        z-index: 10 !important;
     }
 
-    /* Logo */
+
+    /* LOGO */
     .navbar .logo {
         display: flex !important;
         flex-direction: column !important;
+
         align-items: center !important;
         justify-content: center !important;
 
-        margin: 0 0 18px !important;
         gap: 7px !important;
+
+        margin: 0 0 20px !important;
+        padding: 0 !important;
     }
 
+
     .navbar .logo-img {
-        width: 55px !important;
-        height: 55px !important;
+        width: 58px !important;
+        height: 58px !important;
+
         object-fit: contain !important;
     }
 
+
     .navbar .logo span {
         font-size: 19px !important;
-        line-height: 1.2 !important;
+        font-weight: 700 !important;
+
         text-align: center !important;
+        white-space: nowrap !important;
     }
 
-    /* Navigation links */
+
+    /* NAVIGATION */
     .navbar ul {
         width: 100% !important;
-        max-width: 430px !important;
+        max-width: 440px !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
 
         display: grid !important;
+
         grid-template-columns: 1fr 1fr !important;
 
-        gap: 5px 8px !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
+        gap: 4px 8px !important;
 
         list-style: none !important;
-        text-align: center !important;
+
+        align-items: center !important;
+        justify-items: center !important;
     }
+
 
     .navbar ul li {
+        width: 100% !important;
+
         margin: 0 !important;
         padding: 0 !important;
+
+        display: flex !important;
+        justify-content: center !important;
     }
 
-    .navbar ul li a {
-        display: inline-block !important;
 
-        padding: 8px 10px !important;
+    /* ALL LINKS */
+    .navbar ul li a {
+        display: inline-flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: auto !important;
+        min-width: 110px !important;
+
+        padding: 8px 14px !important;
 
         font-size: 16px !important;
         line-height: 1.2 !important;
 
+        text-align: center !important;
+
+        border-radius: 10px !important;
+
         white-space: nowrap !important;
-
-        border-radius: 9px !important;
     }
 
-    /* Active page */
+
+    /* ACTIVE LINK */
     .navbar ul li a.active {
-        padding: 8px 14px !important;
+        width: auto !important;
+        min-width: 110px !important;
+
+        padding: 8px 18px !important;
     }
 
-}
-/* =========================================
-   MOBILE NAVBAR SCROLL WITH PAGE
-========================================= */
 
-@media (max-width: 768px) {
+    /* CONTACT - CENTER */
+    .navbar ul li:last-child {
+        grid-column: 1 / 3 !important;
 
-    .navbar {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
+        width: 100% !important;
 
-        transform: none !important;
-        opacity: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+
+        margin-top: 2px !important;
+    }
+
+
+    .navbar ul li:last-child a {
+        min-width: 110px !important;
     }
 
 }
