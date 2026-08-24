@@ -3881,3 +3881,17 @@ border-radius:50px;
     }
 
 }
+@media (max-width: 768px) {
+
+    .navbar {
+        background: rgba(13, 92, 70, 0.48) !important;
+
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .navbar ul {
+        background: transparent !important;
+    }
+
+}
