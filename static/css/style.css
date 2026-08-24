@@ -41,13 +41,16 @@ a {
    NAVBAR
 ========================================= */
 
+/* =========================================
+   NAVBAR - DESKTOP + MOBILE
+========================================= */
+
 .navbar {
     width: 92%;
     max-width: 1400px;
     min-height: 72px;
 
     margin: 18px auto;
-
     padding: 10px 22px;
 
     display: flex;
@@ -55,22 +58,245 @@ a {
     justify-content: space-between;
     gap: 20px;
 
+    box-sizing: border-box;
+
     background: rgba(255, 255, 255, 0.88);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
     border: 1px solid rgba(13, 92, 70, 0.12);
-
     border-radius: 20px;
 
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
 
-    position: relative;
+    /* STAYS VISIBLE WHILE PAGE SCROLLS */
+    position: sticky;
+    top: 10px;
 
-    z-index: 1000;
+    z-index: 9999;
 
-    transition: 0.3s ease;
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: #0d5c46;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.navbar .logo-img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+.navbar .logo i {
+    font-size: 28px;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS - DESKTOP
+========================================= */
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    flex-wrap: nowrap;
+}
+
+.navbar ul li {
+    list-style: none;
+    flex-shrink: 0;
+}
+
+.navbar ul li a {
+    display: block;
+
+    padding: 10px 14px;
+
+    color: #24483f;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    border-radius: 12px;
+
+    transition: 0.25s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background: #0d5c46;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   MOBILE + TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        width: 96%;
+
+        min-height: auto;
+
+        margin: 8px auto;
+        padding: 8px 10px;
+
+        gap: 8px;
+
+        top: 5px;
+
+        border-radius: 16px;
+
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    /* LOGO */
+
+    .navbar .logo {
+        justify-content: center;
+
+        font-size: 16px;
+    }
+
+    .navbar .logo-img {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* SCROLLABLE NAVIGATION */
+
+    .navbar ul {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: flex-start;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+
+        padding: 2px 0 4px;
+    }
+
+    .navbar ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar ul li {
+        flex: 0 0 auto;
+    }
+
+    .navbar ul li a {
+        padding: 9px 13px;
+
+        font-size: 14px;
+
+        border-radius: 10px;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        width: 97%;
+
+        margin: 5px auto;
+
+        padding: 7px 8px;
+
+        top: 3px;
+
+        border-radius: 14px;
+    }
+
+    .navbar .logo {
+        font-size: 14px;
+    }
+
+    .navbar .logo-img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .navbar ul {
+        gap: 4px;
+    }
+
+    .navbar ul li a {
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================
+   PREVENT HORIZONTAL PAGE SCROLL
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 
